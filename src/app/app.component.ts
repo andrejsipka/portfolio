@@ -8,7 +8,7 @@ import { NavMenuComponent } from './shared/ui/nav-menu/nav-menu.component';
       RouterModule,
       NavMenuComponent
    ],
-   selector: 'portfolio-root',
+   selector: 'app-root',
    template: `
       <app-nav-menu></app-nav-menu>
       <router-outlet></router-outlet>

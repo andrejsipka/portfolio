@@ -10,9 +10,18 @@ import { ThemeToggleComponent } from "../../components/theme-toggle/theme-toggle
       ThemeToggleComponent
    ],
    template: `
-      <div>
-         Navigation
+      <div> 
+         <div>Andrej Sipka</div>
 
+         <div>
+            <nav>
+               <ul>
+                  <li><a>Projects</a></li>
+                  <li><a>Blog</a></li>
+                  <li><a>About</a></li>
+               </ul>
+            </nav>
+         </div>
          <app-theme-toggle></app-theme-toggle>
       </div>
    `,
