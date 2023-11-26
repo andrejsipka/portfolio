@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "portfolio",
+            "prefix": "app",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "portfolio",
+            "prefix": "app",
             "style": "kebab-case"
           }
         ]
