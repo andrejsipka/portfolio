@@ -1,3 +1,5 @@
+@use './layout';
+
 /* You can add global styles to this file, and also import other style files */
 
 * {
@@ -9,13 +11,18 @@
 html {
    box-sizing: border-box;
    font-size: 62.5%;
+   font-family: 'Inter', sans-serif;
 }
 
 html, body { 
-   height: 100%;
-   
-   font-size: 1rem;
-   background-color: lightcoral;
+   min-height: 100%;
 }
 
+body {
+   font-size: 1.6rem;
+}
+
+:is(a) {
+   text-decoration: none;
+}
 

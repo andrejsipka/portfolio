@@ -1,3 +1,88 @@
-<div>
-   Welcome to home page!
-</div>
+<section class="section">
+   <div class="section__container">
+      <div class="section__container-layout">
+         <div class="section__layout hero-layout">
+            <div class="hero-layout__wheel">0</div>
+
+            <header class="hero-layout__header">
+               <h1>
+                  <span>Frontend</span>
+                  <span>developer</span>
+               </h1>
+
+               <p>
+                  Ambitious young developer with passion to create functional, scaleable services for people.
+               </p>
+
+               <div class="hero-layout__header-actions">
+                  <a>About me</a>
+
+                  <span>Scroll</span>
+               </div>
+            </header>
+
+            <div class="hero-layout__background">
+
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Projects section -->
+<section class="section">
+   <div class="section__container">
+      <div class="section__container-layout">
+         <div class="section__layout">
+            <header class="header">
+               <h2 class="header__caption">List of projects</h2>
+            </header>
+         
+            <div class="project">
+               <div class="project__grid">
+                  @for(article of [{id: 1}, {id: 2}, {id: 3}]; track article.id) {
+                     <div class="project-card">
+                        {{article.id}}
+                     </div>
+                  }
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Blog section -->
+<section class="section">
+   <div class="section__container">
+      <div class="section__container-layout">
+         <div class="section__layout">
+            <header class="header">
+               <h2 class="header__caption">Blog - recent Articles</h2>
+            </header>
+            
+            <div class="blog">
+               @for(article of [{id: 1}, {id: 2}, {id: 3}]; track article.id) {
+                  <article class="blog-post">
+                     <div class="blog-post__wrapper">
+                        <time class="blog-post__time" datetime="2023-11-23T20:00:00">
+                           <a>25 November 2023</a>
+                        </time>
+   
+                        <div class="blog-post__body">
+                           <h2>
+                              <a>Dark / Light mode  with dynamically loaded CSS theme</a>
+                           </h2>
+                           <p>
+                              There is multiple ways how to make changing themes but 
+                              I will follow the one done by angular material theme. This approach is implemented also on my portfolio.
+                           </p>
+                        </div>
+                     </div>  
+                  </article>
+               }
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

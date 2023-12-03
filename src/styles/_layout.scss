@@ -1,0 +1,31 @@
+@use './variables' as *;
+
+.header {
+   border-bottom: 1px solid grey;
+   margin-bottom: 3.6rem;
+   
+   &__caption {
+      font-size: 1.6rem;
+   }
+}
+
+.section {
+   &__container {
+      display: flex;
+      justify-content: center;
+   }
+
+   &__container-layout {
+      width: 100%;
+      max-width: $section-max-width;
+   }
+
+   &__section-layout {
+
+   }
+
+   &:not(:last-child) {
+      margin-bottom: 6.4rem;
+   }
+}
+
