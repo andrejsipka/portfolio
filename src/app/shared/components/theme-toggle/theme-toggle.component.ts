@@ -6,10 +6,11 @@ import { CommonModule, DOCUMENT } from "@angular/common";
    standalone: true,
    imports: [CommonModule],
    template: `
-      <button type="button" (click)="toggleTheme()">  
+      <button type="button" (click)="toggleTheme()" class="theme-button" [ngClass]="isDark ? 'theme-button--dark' : 'theme-button--light'">  
          <i class="material-symbols-outlined">{{ isDark ? 'nightlight' : 'light_mode'}}</i>
       </button>
-   `
+   `,
+   styleUrl: './theme-toggle.component.scss'
 })
 export class ThemeToggleComponent {
    private readonly document: Document = inject(DOCUMENT);

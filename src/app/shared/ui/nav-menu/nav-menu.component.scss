@@ -1,0 +1,41 @@
+@use '../../../../styles/variables' as *;
+
+.site-header {
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   &__container {
+      width: 100%;
+      max-width: $section-max-width;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+   }
+
+   &__container-layout {
+      grid-column: 12 span;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__logo {
+   }
+
+   &__nav-container, 
+   &__list {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+   }
+
+
+   &__nav {
+   }
+
+
+   &__item {
+
+   }
+}

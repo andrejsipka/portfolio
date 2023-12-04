@@ -1,29 +1,42 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ThemeToggleComponent } from "../../components/theme-toggle/theme-toggle.component";
+import { RouterModule } from "@angular/router";
 
 @Component({
    selector: "app-nav-menu",
    standalone: true,
    imports: [
       CommonModule,
-      ThemeToggleComponent
+      ThemeToggleComponent,
+      RouterModule
    ],
    template: `
-      <div> 
-         <div>Andrej Sipka</div>
+      <header class="site-header">
+         <div class="site-header__container">
+            <div class="site-header__container-layout">
+               <div class="site-header__logo">
+                  <a routerLink="/" >Andrej Sipka</a>
+               </div>
 
-         <div>
-            <nav>
-               <ul>
-                  <li><a>Projects</a></li>
-                  <li><a>Blog</a></li>
-                  <li><a>About</a></li>
-               </ul>
-            </nav>
+               <div class="site-header__nav-container">
+                  <nav class="site-header__nav">
+                     <ul class="site-header__list">
+                        <li class="site-header__item">
+                           <a routerLink="/blog">Blog</a>
+                        </li>
+                        <li class="site-header__item">
+                           <a routerLink="/about">About</a>
+                        </li>
+                     </ul>
+                  </nav>
+
+                  <app-theme-toggle></app-theme-toggle>
+               </div>
+            </div>
          </div>
-         <app-theme-toggle></app-theme-toggle>
-      </div>
+      </header>
    `,
+   styleUrl: './nav-menu.component.scss'
 })
 export class NavMenuComponent { }
