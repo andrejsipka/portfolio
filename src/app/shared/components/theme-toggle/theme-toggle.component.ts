@@ -6,8 +6,8 @@ import { CommonModule, DOCUMENT } from "@angular/common";
    standalone: true,
    imports: [CommonModule],
    template: `
-      <button type="button" (click)="toggleTheme()" class="theme-button" [ngClass]="isDark ? 'theme-button--dark' : 'theme-button--light'">  
-         <i class="material-symbols-outlined">{{ isDark ? 'nightlight' : 'light_mode'}}</i>
+      <button type="button" (click)="toggleTheme()" class="theme-button" [ngClass]="isDark ? 'theme-button--light' : 'theme-button--dark'">  
+         <i class="material-symbols-outlined">{{ isDark ? 'light_mode' : 'nightlight'}}</i>
       </button>
    `,
    styleUrl: './theme-toggle.component.scss'
