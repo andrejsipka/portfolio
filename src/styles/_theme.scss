@@ -1,0 +1,81 @@
+@use "sass:map";
+@use './constants' as constants;
+@use './mixins' as mixins;
+
+@mixin typography-theme($theme) {
+   $is-dark-theme: map.get($theme, is-dark);
+
+   :is(h1, h2, h3, h4), :is(h1, h2, h3, h4) :is(span) {
+      color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+   }
+
+   :is(p, span) {
+      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+   }
+}
+
+@mixin layout-theme($theme) {
+   $is-dark-theme: map.get($theme, is-dark);
+
+   body {
+      background-color: if($is-dark-theme, constants.$color-black, constants.$color-snow-white);
+   }
+
+   .site-header__item a, .site-header__logo a {
+      color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+   }
+
+   .header {
+      &__caption {
+         color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+      }
+   }
+
+   .dashed-divider {
+      stroke: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+   }
+}
+
+@mixin controls-theme($theme) {
+   $is-dark-theme: map.get($theme, is-dark);
+
+   // primary color, color that doesn't change on theme toggle
+   a.link {
+      color: constants.$color-orange;  
+
+      & i.material-symbols-outlined {
+         margin-left: 4px;
+         transform: rotate(-45deg);
+      }
+   }
+
+   :is(a, button).button {
+      height: 3.6rem;
+      padding: 0 16px;
+      border-radius: 36px;
+      @include mixins.flexbox(center, center);
+
+      & i.material-symbols-outlined {
+         margin-left: 4px;
+         transform: rotate(-45deg);
+      }
+
+      &--primary {
+         background-color: constants.$color-orange;
+         color: constants.$color-snow-white;
+      }
+
+      &--secondary {
+         background-color: transparent;
+         color: constants.$color-snow-white;
+         border-radius: 1px solid constants.$color-snow-white;
+      }
+   }
+}
+
+
+@mixin setTheme($theme) {
+   @include typography-theme($theme);
+   @include layout-theme($theme);
+   @include controls-theme($theme);
+}

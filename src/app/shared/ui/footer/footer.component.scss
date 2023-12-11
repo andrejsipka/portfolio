@@ -1,0 +1,55 @@
+@use '../../../../styles/_constants' as constants;
+@use '../../../../styles/_mixins' as mixins;
+
+.footer {
+   height: 80px;
+   @include mixins.flexbox(center, center); 
+   margin-top: 7.2rem;
+   
+   @media screen and (max-width: constants.$section-max-width) {
+      padding: 0 1rem;
+   }
+
+   &__container {
+      width: 100%;
+      max-width: constants.$section-max-width;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+   }
+
+   &__container-layout {
+      grid-column: 12 span;
+      @include mixins.flexbox(space-between, flex-start);
+   }
+
+   &__links {
+      margin-top: 1.6rem;
+      @include mixins.flexbox(space-between, center);
+   }
+}
+
+.footer-contact,
+.footer-nav {
+   margin-bottom: 3.6rem;
+
+   &__list {
+      height: 100%;
+      @include mixins.flexbox(flex-start, center);
+      gap: 2rem;
+   }
+
+   &__item {
+      @include mixins.flexbox(flex-start, center);
+
+      & :is(i, svg) {
+         margin-left: 4px;
+         width: 24px;
+         height: 24px;
+      }
+
+      & a, button {
+         @include mixins.flexbox(flex-start, center);
+      }
+   }
+}

@@ -1,13 +1,13 @@
-<section class="section">
+<section class="section" id="top">
    <div class="section__container">
       <div class="section__container-layout">
          <div class="section__layout hero-layout">
-            <div class="hero-layout__wheel">0</div>
+            <div class="hero-layout__wheel"></div>
 
             <header class="hero-layout__header">
                <h1>
-                  <span>Frontend</span>
-                  <span>developer</span>
+                  <span>Hello,</span>
+                  <span>I'm Andrej</span>
                </h1>
 
                <p>
@@ -15,14 +15,21 @@
                </p>
 
                <div class="hero-layout__header-actions">
-                  <a>About me</a>
-
-                  <span>Scroll</span>
+                  <a routerLink="/about" class="button button--primary">
+                     About me  <i class="material-symbols-outlined">arrow_forward</i>
+                  </a>
                </div>
-            </header>
+            </header>   
 
             <div class="hero-layout__background">
                <app-lava-background></app-lava-background>
+
+               <span class="hero-layout__background-scroll">
+                  Scroll
+                  <i class="material-symbols-outlined">
+                     arrow_downward
+                  </i>
+               </span>
             </div>
          </div>
       </div>
@@ -36,14 +43,16 @@
          <div class="section__layout">
             <header class="header">
                <h2 class="header__caption">List of projects</h2>
+
+               <svg width="100%" height="2" viewBox="0 0 1312 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line class="dashed-divider" x1="0.5" y1="0.5" x2="1311.5" y2="0.499885" stroke-linecap="round" stroke-dasharray="1 15"/>
+               </svg>                  
             </header>
          
             <div class="project">
                <div class="project__grid">
-                  @for(article of [{id: 1}, {id: 2}, {id: 3}]; track article.id) {
-                     <div class="project-card">
-                        {{article.id}}
-                     </div>
+                  @for(project of [{id: 1}, {id: 2}, {id: 3}]; track project.id) {
+                     <app-project-card [project]="project"></app-project-card>
                   }
                </div>
             </div>
@@ -59,6 +68,10 @@
          <div class="section__layout">
             <header class="header">
                <h2 class="header__caption">Blog - recent Articles</h2>
+
+               <svg width="100%" height="2" viewBox="0 0 1312 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line class="dashed-divider" x1="0.5" y1="0.5" x2="1311.5" y2="0.499885" stroke="#403D39" stroke-linecap="round" stroke-dasharray="1 15"/>
+               </svg>                  
             </header>
             
             <div class="blog">

@@ -28,6 +28,7 @@ export class ThemeToggleComponent {
        * Initialize based on the prefers-color-scheme media query.
        */
       this.isDark = this.document.defaultView?.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+
       // Remove initial theme set
       const initialTheme = this.document.getElementById('client-theme');
 
@@ -40,6 +41,8 @@ export class ThemeToggleComponent {
       themeLink.rel = 'stylesheet';
       themeLink.href = `${this.getThemeName()}-theme.css`;
       this.document.head.appendChild(themeLink);
+
+      // #IMPROVEMENTS Check if link has been appended to the document or finished the downloading to set transition after loading theme
    }
 
    public getThemeName(): string {

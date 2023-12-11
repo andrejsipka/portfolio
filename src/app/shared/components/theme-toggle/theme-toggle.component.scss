@@ -1,3 +1,5 @@
+@use '../../../..//styles/_constants' as constants;
+
 .theme-button {
    width: 3.6rem;
    height: 3.6rem;
@@ -9,12 +11,12 @@
    transition: all 200ms linear;
 
    &--dark {
-      background-color: #7161ef;
-      color: white;
+      background-color: constants.$color-toggle-dark;
+      color: constants.$color-snow-white;
    }
 
    &--light {
-      background-color: #FFE382;
-      color: black;
+      background-color: constants.$color-toggle-light;
+      color: constants.$color-black;
    }
 }

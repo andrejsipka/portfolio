@@ -1,14 +1,18 @@
-@use '../../../../styles/variables' as *;
+@use '../../../../styles/_constants' as constants;
 
 .site-header {
    height: 80px;
    display: flex;
    align-items: center;
    justify-content: center;
+   
+   @media screen and (max-width: constants.$section-max-width) {
+      padding: 0 1rem;
+   }
 
    &__container {
       width: 100%;
-      max-width: $section-max-width;
+      max-width: constants.$section-max-width;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 2rem;
@@ -18,6 +22,10 @@
       grid-column: 12 span;
       display: flex;
       justify-content: space-between;
+   }
+
+   &__layout {
+      
    }
 
    &__logo {
