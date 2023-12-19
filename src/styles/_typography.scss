@@ -1,0 +1,58 @@
+@use './constants' as constants;
+
+$fw-bold: 700;
+$fw-medium: 500;
+$fw-regular: 400;
+
+/* heading font sizes */
+$fs-xlarge: 36px;
+$fs-large: 24px;
+$fs-medium: 18px; 
+$fs-base: 16px;
+$fs-small: 14px;
+$fs-xsmall: 12px;
+
+.heading {
+   font-weight: $fw-bold;
+   line-height: 1.2;
+
+   &--large { font-size: 80px }
+   &--medium { font-size: 24px }
+   &--small { font-size: 18px; }
+   &--uppercase { text-transform: uppercase; }
+   &--font-weight-medium { font-weight: $fw-medium; }
+
+   @media screen and (max-width: constants.$media-screen-mobile) {
+      &--large { font-size: 48px; }
+   }
+}
+
+.text {
+   line-height: 1.5;
+   font-weight: $fw-medium;
+   font-size: $fs-base;
+
+   &--large { 
+      font-size: $fs-large; 
+   }
+   
+   @media screen and (max-width: constants.$media-screen-mobile) {
+      &--large { font-size: $fs-medium; }
+   }
+}
+
+.caption {
+   font-weight: $fw-bold;
+   font-size: $fs-base;
+   line-height: 1.2;
+}
+
+a.link {
+   font-weight: $fw-regular;
+   font-size: $fs-base;
+}
+
+button, button.button {
+   font-weight: $fw-medium;
+   font-size: $fs-base;
+}

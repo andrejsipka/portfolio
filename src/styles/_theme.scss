@@ -12,6 +12,14 @@
    :is(p, span) {
       color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
    }
+
+   .heading, .caption, .heading > a {
+      color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+   }
+
+   .text {
+      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+   }
 }
 
 @mixin layout-theme($theme) {
@@ -25,12 +33,6 @@
       color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
    }
 
-   .header {
-      &__caption {
-         color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
-      }
-   }
-
    .dashed-divider {
       stroke: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
    }
@@ -39,37 +41,22 @@
 @mixin controls-theme($theme) {
    $is-dark-theme: map.get($theme, is-dark);
 
+   :is(a, button) {
+      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+   }
+
    // primary color, color that doesn't change on theme toggle
    a.link {
-      color: constants.$color-orange;  
+      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
 
-      & i.material-symbols-outlined {
-         margin-left: 4px;
-         transform: rotate(-45deg);
+      & svg {
+         fill: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
       }
    }
 
-   :is(a, button).button {
-      height: 3.6rem;
-      padding: 0 16px;
-      border-radius: 36px;
-      @include mixins.flexbox(center, center);
-
-      & i.material-symbols-outlined {
-         margin-left: 4px;
-         transform: rotate(-45deg);
-      }
-
-      &--primary {
-         background-color: constants.$color-orange;
-         color: constants.$color-snow-white;
-      }
-
-      &--secondary {
-         background-color: transparent;
-         color: constants.$color-snow-white;
-         border-radius: 1px solid constants.$color-snow-white;
-      }
+   :is(a, button).button.button--secondary {
+      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+      border-color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
    }
 }
 

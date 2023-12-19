@@ -5,13 +5,13 @@
             <div class="hero-layout__wheel"></div>
 
             <header class="hero-layout__header">
-               <h1>
+               <h1 class="heading heading--large heading--uppercase">
                   <span>Hello,</span>
                   <span>I'm Andrej</span>
                </h1>
 
-               <p>
-                  Ambitious young developer with passion to create functional, scaleable services for people.
+               <p class="text text--large">
+                  Ambitious young web developer with passion to create functional, scaleable services for people.
                </p>
 
                <div class="hero-layout__header-actions">
@@ -24,7 +24,7 @@
             <div class="hero-layout__background">
                <app-lava-background></app-lava-background>
 
-               <span class="hero-layout__background-scroll">
+               <span class="hero-layout__background-scroll text">
                   Scroll
                   <i class="material-symbols-outlined">
                      arrow_downward
@@ -42,7 +42,7 @@
       <div class="section__container-layout">
          <div class="section__layout">
             <header class="header">
-               <h2 class="header__caption">List of projects</h2>
+               <h2 class="caption">List of projects</h2>
 
                <svg width="100%" height="2" viewBox="0 0 1312 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line class="dashed-divider" x1="0.5" y1="0.5" x2="1311.5" y2="0.499885" stroke-linecap="round" stroke-dasharray="1 15"/>
@@ -67,7 +67,7 @@
       <div class="section__container-layout">
          <div class="section__layout">
             <header class="header">
-               <h2 class="header__caption">Blog - recent Articles</h2>
+               <h2 class="caption">Blog - recent Articles</h2>
 
                <svg width="100%" height="2" viewBox="0 0 1312 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line class="dashed-divider" x1="0.5" y1="0.5" x2="1311.5" y2="0.499885" stroke="#403D39" stroke-linecap="round" stroke-dasharray="1 15"/>
@@ -76,24 +76,16 @@
             
             <div class="blog">
                @for(article of [{id: 1}, {id: 2}, {id: 3}]; track article.id) {
-                  <article class="blog-post">
-                     <div class="blog-post__wrapper">
-                        <time class="blog-post__time" datetime="2023-11-23T20:00:00">
-                           <a>25 November 2023</a>
-                        </time>
-   
-                        <div class="blog-post__body">
-                           <h2>
-                              <a>Dark / Light mode  with dynamically loaded CSS theme</a>
-                           </h2>
-                           <p>
-                              There is multiple ways how to make changing themes but 
-                              I will follow the one done by angular material theme. This approach is implemented also on my portfolio.
-                           </p>
-                        </div>
-                     </div>  
-                  </article>
+                  <app-article-item></app-article-item>
                }
+
+               <div class="blog__actions">
+                  @if(4 > 3) {
+                     <a routerLink="/articles" class="button button--secondary">
+                        See all articles  <i class="material-symbols-outlined">arrow_forward</i>
+                     </a>
+                  }
+               </div>
             </div>
          </div>
       </div>

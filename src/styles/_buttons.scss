@@ -1,0 +1,38 @@
+@use './mixins' as mixins;
+@use './constants' as constants;
+
+:is(a, button).button {
+   @include mixins.flexbox(center, center);
+
+   &--primary, &--secondary {
+      height: 3.6rem;
+      padding: 0 16px;
+      border-radius: 36px;
+   }
+
+   &--primary, &--secondary, &--link {
+      & i.material-symbols-outlined {
+         margin-left: 4px;
+         transform: rotate(-45deg);
+      }
+   }
+
+   &--link {
+      height: 3.6rem;
+      max-width: max-content;
+      color: constants.$color-orange;
+   } 
+
+   &--primary {
+      background-color: constants.$color-orange;
+      color: constants.$color-snow-white;
+   }
+
+   &--secondary {
+      background-color: transparent;
+      color: constants.$color-snow-white;
+      border-radius: 1px solid constants.$color-snow-white;
+      border-style: solid;
+      border-width: 1px;
+   }
+}
