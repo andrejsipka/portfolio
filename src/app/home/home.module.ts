@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { LavaBackgroundComponent } from './ui/lava-background/lava-background.component';
+import { HomeComponent } from './feature/home.component';
 
 @NgModule({
    declarations: [],

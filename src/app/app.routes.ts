@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/feature/home.component';
 import { PageNotFoundComponent } from './shared/ui/page-not-found/page-not-found.component';
 
 export const routes: Route[] = [
