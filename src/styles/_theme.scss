@@ -41,22 +41,29 @@
 @mixin controls-theme($theme) {
    $is-dark-theme: map.get($theme, is-dark);
 
-   :is(a, button) {
-      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
-   }
+   :is(a, button).button {
+      &.variant--link {
+         &.link--secondary {
+            color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+         }
 
-   // primary color, color that doesn't change on theme toggle
-   a.link {
-      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
-
-      & svg {
-         fill: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+         &:hover {
+            color: if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+         }
       }
-   }
 
-   :is(a, button).button.button--secondary {
-      color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
-      border-color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+      &.variant--button {
+         &.button--secondary {
+            color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);
+            border-color: if($is-dark-theme, constants.$color-light-brown, constants.$color-dark-brown);;
+         }
+
+         &:hover {
+            color: if($is-dark-theme, constants.$color-black, constants.$color-snow-white);
+            background-color:  if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+            border-color:  if($is-dark-theme, constants.$color-snow-white, constants.$color-black);
+         }
+      }
    }
 }
 

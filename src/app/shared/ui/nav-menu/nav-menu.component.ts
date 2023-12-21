@@ -16,17 +16,17 @@ import { RouterModule } from "@angular/router";
          <div class="site-header__container">
             <div class="site-header__container-layout">
                <div class="site-header__logo">
-                  <a routerLink="/" class="link">Andrej Sipka</a>
+                  <a routerLink="/" class="button variant--link link--secondary">Andrej Sipka</a>
                </div>
 
                <div class="site-header__nav-container">
                   <nav class="site-header__nav">
                      <ul class="site-header__list">
                         <li class="site-header__item">
-                           <a routerLink="/blog" class="link">Blog</a>
+                           <a routerLink="/blog" class="button variant--link link--secondary">Blog</a>
                         </li>
                         <li class="site-header__item">
-                           <a routerLink="/about" class="link">About</a>
+                           <a routerLink="/about" class="button variant--link link--secondary">About</a>
                         </li>
                      </ul>
                   </nav>

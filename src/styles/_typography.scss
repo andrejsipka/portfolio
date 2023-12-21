@@ -32,7 +32,7 @@ $fs-xsmall: 12px;
    font-weight: $fw-medium;
    font-size: $fs-base;
 
-   &--large { 
+   &--medium { 
       font-size: $fs-large; 
    }
    
@@ -53,6 +53,5 @@ a.link {
 }
 
 button, button.button {
-   font-weight: $fw-medium;
    font-size: $fs-base;
 }

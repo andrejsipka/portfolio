@@ -9,7 +9,7 @@ import { CommonModule } from "@angular/common";
       <article class="blog-post">
          <div class="blog-post__wrapper">
             <time class="blog-post__time" datetime="2023-11-23T20:00:00">
-               <a>25 November 2023</a>
+               <a class="button variant--link link--secondary">25 November 2023</a>
             </time>
 
             <div class="blog-post__body">
@@ -22,8 +22,8 @@ import { CommonModule } from "@angular/common";
                </p>
 
                <div>
-                  <a routerLink="/about" class="button button--link">
-                     Read  <i class="material-symbols-outlined">arrow_forward</i>
+                  <a routerLink="/about" class="button variant--link link--primary">
+                     Read  <i class="button__icon button__icon--rotate material-symbols-outlined">arrow_forward</i>
                   </a>
                </div>
             </div>

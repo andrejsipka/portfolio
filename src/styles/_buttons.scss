@@ -1,37 +1,58 @@
 @use './mixins' as mixins;
 @use './constants' as constants;
 
+$fw-medium: 500;
+$button-height: 3.6rem;
+
 :is(a, button).button {
    @include mixins.flexbox(center, center);
+   max-width: max-content;
+   
+   // BUTTON VARIANTS
+   &.variant {
+      &--link {
+         height: $button-height;
+      }
 
-   &--primary, &--secondary {
-      height: 3.6rem;
-      padding: 0 16px;
-      border-radius: 36px;
-   }
-
-   &--primary, &--secondary, &--link {
-      & i.material-symbols-outlined {
-         margin-left: 4px;
-         transform: rotate(-45deg);
+      &--button {
+         height: $button-height;
+         padding: 0 16px;
+         border-radius: 36px;
+         font-weight: $fw-medium;
       }
    }
 
-   &--link {
-      height: 3.6rem;
-      max-width: max-content;
-      color: constants.$color-orange;
-   } 
+   & i.button__icon {
+      margin-left: 4px;
 
-   &--primary {
-      background-color: constants.$color-orange;
-      color: constants.$color-snow-white;
+      &--rotate {
+         transform: rotate(-45deg);
+      }
+   }
+}
+
+/*
+   BUTTON TYPES
+   type --PRIMARY is "orange" according to color palette
+   type --Secondary is containing neutral colors like "snow-white" and "black"
+*/
+:is(a).button.variant--link {
+   &.link--primary {
+      color: constants.$color-orange;
    }
 
-   &--secondary {
-      background-color: transparent;
+   &.link--secondary {}
+}
+
+:is(a, button).button.variant--button {
+   &.button--primary {
+      background-color: constants.$color-orange;
       color: constants.$color-snow-white;
-      border-radius: 1px solid constants.$color-snow-white;
+      border: 1px solid transparent;
+   }
+
+   &.button--secondary {
+      background-color: transparent;
       border-style: solid;
       border-width: 1px;
    }
