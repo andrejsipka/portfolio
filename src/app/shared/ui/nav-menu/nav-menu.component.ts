@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ThemeToggleComponent } from "../../components/theme-toggle/theme-toggle.component";
+import { ThemeToggleComponent } from "../../feature/theme-toggle/theme-toggle.component";
 import { RouterModule } from "@angular/router";
 
 @Component({
