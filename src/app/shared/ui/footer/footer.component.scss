@@ -23,6 +23,8 @@
       @include mixins.flexbox(space-between, flex-start);
    }
 
+   &__layout { width: 100%; }
+
    &__links {
       margin-top: 1.6rem;
       @include mixins.flexbox(space-between, center);
