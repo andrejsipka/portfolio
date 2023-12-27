@@ -49,8 +49,10 @@
          
             <div class="project">
                <div class="project__grid">
-                  @for(project of [{id: 1}, {id: 2}, {id: 3}]; track project.id) {
-                     <app-project-card [project]="project"></app-project-card>
+                  @if(projects$ | async; as projects) {
+                     @for(project of projects; track project.id) {
+                        <app-project-card [project]="project"></app-project-card>
+                     }
                   }
                </div>
             </div>
@@ -73,17 +75,17 @@
             </header>
             
             <div class="blog">
-               @for(article of [{id: 1}, {id: 2}, {id: 3}]; track article.id) {
-                  <app-article-item></app-article-item>
-               }
+               @if(posts$ | async; as posts) {
+                  @for(article of posts; track article.id) {
+                     <app-article-item></app-article-item>
+                  }
 
-               <div class="blog__actions">
-                  @if(4 > 3) {
+                  <div class="blog__actions">
                      <a routerLink="/articles" class="button variant--button button--secondary">
                         See all articles <i class="button__icon button__icon--rotate material-symbols-outlined">arrow_forward</i>
                      </a>
-                  }
-               </div>
+                  </div>
+               }
             </div>
          </div>
       </div>

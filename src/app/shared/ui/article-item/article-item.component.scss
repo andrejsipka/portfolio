@@ -1,12 +1,16 @@
-.blog-post {
+:host {
+   display: block;
    border-bottom: 1px solid grey;
-   height: 200px;
-   display: flex;
-   align-items: center;
 
    &:first-child {
       border-top: 1px solid grey;
    }
+}
+
+.blog-post {
+   height: 200px;
+   display: flex;
+   align-items: center;
 
    &__wrapper {
       display: grid;

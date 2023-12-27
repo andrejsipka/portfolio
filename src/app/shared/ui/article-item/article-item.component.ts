@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -30,6 +30,6 @@ import { CommonModule } from "@angular/common";
          </div>  
       </article>
    `,
-   styleUrl: "./article-item.component.scss",
+   styleUrl: "./article-item.component.scss"
 })
 export class ArticleItemComponent { }
